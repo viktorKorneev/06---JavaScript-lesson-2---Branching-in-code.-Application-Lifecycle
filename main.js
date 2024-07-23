@@ -1,18 +1,24 @@
-let userChoice
-let computerChoice
-let isWinner = false
+let userChoice;
+let computerChoice;
+let isWinner = false;
 
-while (!isWinner ) {
-    userChoice = prompt("Выберите камень, ножницы или бумага:")
-    userChoice = userChoice.toLowerCase()
+while (!isWinner) {
+  userChoice = prompt("Выберите камень, ножницы или бумага:");
+  userChoice = userChoice.toLowerCase();
 
-    let randomNum = Math.floor(Math.random() * 3)
+  let randomNum = Math.floor(Math.random() * 3);
 
-    if (randomNum === 0) {
-        computerChoice = "камень"
-    } else if (randomNum === 1) {
-        computerChoice = "ножницы"
-    } else {
-        computerChoice = "бумага"
-    }
+  if (randomNum === 0) {
+    computerChoice = "камень";
+  } else if (randomNum === 1) {
+    computerChoice = "ножницы";
+  } else {
+    computerChoice = "бумага";
+  }
+
+  if (
+    userChoice === "камень" || userChoice === "ножницы" || userChoice === "бумага") {
+  } else {
+    alert("Пожалуйста, введи коррктный ход: камень, ножницы или бумага.");
+  }
 }
