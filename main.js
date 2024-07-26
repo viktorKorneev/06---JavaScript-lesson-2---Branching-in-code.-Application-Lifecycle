@@ -56,7 +56,71 @@ let userChoice;
 let computerChoice;
 let isWinner = false;
 
+const randomNumber = Math.floor(Math.random() * 3);
 
-while (isWinner === false) {
-  userChoice = prompt("Выберите камень, ножницы или бумагу")
+// if (randomNumber === 0) {
+//   computerChoice = "камень";
+// } else if (randomNumber === 1) {
+//   computerChoice = "ножницы";
+// } else {
+//   computerChoice = "бумага";
+// }
+
+
+switch (randomNumber) {
+  case 0:
+    computerChoice = "камень";
+    break;
+    case 1:
+    computerChoice = "ножницы";
+    break;
+    case 2:
+    computerChoice = "бумага";
+    break;
 }
+console.log(computerChoice);
+
+
+while (!isWinner) {
+  userChoice = prompt("Выберите камень, ножницы или бумага");
+  userChoice = userChoice.toLowerCase();
+
+  if (
+    userChoice === "камень" ||
+    userChoice === "ножницы" ||
+    userChoice === "бумага"
+  ) {
+    if (computerChoice === userChoice) {
+      alert("Ничья, давай ещё разок!");
+    } else {
+      const isUserWinner = (userChoice === "камень" && computerChoice === "ножницы") ||
+      (userChoice === "ножницы" && computerChoice === "бумага") ||
+      (userChoice === "бумага" && computerChoice === "камень")
+
+      const message = isUserWinner ? "Ты выйграл!" : "Ты проиграл!"
+      alert(message)
+      isWinner = true
+    }
+    
+  } else {
+    alert("Введите правильное значение: камень, ножницы или бумага");
+  } }
+    
+    
+    
+    
+    
+    
+//     else if (
+//       (userChoice === "камень" && computerChoice === "ножницы") ||
+//       (userChoice === "ножницы" && computerChoice === "бумага") ||
+//       (userChoice === "бумага" && computerChoice === "камень")
+//     ) {
+//       alert("Ты выйграл!");
+//       isWinner = true;
+//     } else {
+//       alert("Ты проиграл!");
+//       isWinner = true;
+//     }
+  
+// }
