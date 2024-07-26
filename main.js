@@ -55,3 +55,8 @@
 let userChoice;
 let computerChoice;
 let isWinner = false;
+
+
+while (isWinner === false) {
+  userChoice = prompt("Выберите камень, ножницы или бумагу")
+}
